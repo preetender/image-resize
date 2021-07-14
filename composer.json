@@ -11,7 +11,7 @@
     "repositories": [
         {"type": "composer", "url": "https://php.pkg.github.com/leveinvestimentos/"}
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Leve\\Uploader\\": "src/"
