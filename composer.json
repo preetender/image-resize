@@ -1,0 +1,30 @@
+{
+    "name": "leveinvestimentos/uploader",
+    "description": "Processamento de arquivos",
+    "type": "library",
+    "authors": [
+        {
+            "name": "César Augusto",
+            "email": "cesar@leve.app.br"
+        }
+    ],
+    "repositories": [
+        {"type": "composer", "url": "https://php.pkg.github.com/leveinvestimentos/"}
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Leve\\Uploader\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Leve\\Uploader\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "intervention/image": "^2.5"
+    }
+}
