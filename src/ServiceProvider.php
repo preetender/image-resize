@@ -12,6 +12,6 @@ class ServiceProvider extends BaseServiceProvider
     public function register(): void
     {
         // carregar arquivo de configuração do pacote
-        // $this->mergeConfigFrom(__DIR__ . '/../config/ironhide.php', 'ironhide');
+        $this->mergeConfigFrom(__DIR__ . '/../config/uploader.php', 'uploader');
     }
 }

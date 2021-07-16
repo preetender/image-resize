@@ -8,10 +8,6 @@
             "email": "cesar@leve.app.br"
         }
     ],
-    "repositories": [
-        {"type": "composer", "url": "https://php.pkg.github.com/leveinvestimentos/"}
-    ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Leve\\Uploader\\": "src/"
@@ -26,5 +22,9 @@
     },
     "require": {
         "intervention/image": "^2.5"
-    }
+    },
+    "require-dev": {
+        "illuminate/support": "^8.0"
+    },
+    "minimum-stability": "dev"
 }
