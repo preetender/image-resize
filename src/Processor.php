@@ -2,6 +2,8 @@
 
 namespace Leve\Uploader;
 
+use Illuminate\Container\Container;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Str;
@@ -104,7 +106,9 @@ class Processor
 
         $encoded = $make->encode('webp', 100)->encoded;
 
-        return Storage::disk('s3')->put($filename, $encoded, 'public');
+        return Storage::disk(
+            Config::get('uploader.upload_disk', 'local')
+        )->put($filename, $encoded, 'public');
     }
 
     /**
@@ -147,7 +151,7 @@ class Processor
      */
     public function revert()
     {
-        $fs = app('filesystem');
+        $fs = Container::getInstance()->make('filesystem');
 
         if ($fs->exists($this->directory)) {
             $fs->deleteDirectory($this->directory);

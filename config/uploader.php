@@ -1,4 +1,10 @@
 <?php
 
+return [
+    'upload_disk' => 's3',
 
-return [];
+    'compress' => [
+        'extension' => 'webp',
+        'quality' => 100
+    ],
+];
